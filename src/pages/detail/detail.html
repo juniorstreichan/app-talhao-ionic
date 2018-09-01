@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{talhao?.descricao || '...'}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <small> CÓDIGO: {{talhao.id}}</small>
+  <form [formGroup]="form" (ngSubmit)="alterartalhao()">
+
+    <ion-item>
+      <ion-label stacked>
+        <small>Descrição</small>
+      </ion-label>
+      <ion-input formControlName="descricao">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        <small>Fazenda</small>
+      </ion-label>
+      <ion-input formControlName="fazenda">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        <small>Hectares</small>
+      </ion-label>
+      <ion-input formControlName="hectares">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>
+        <small>Cultura</small>
+      </ion-label>
+      <ion-select formControlName="cultura">
+        <ion-option value="SOJA">SOJA</ion-option>
+        <ion-option value="MILHO">MILHO</ion-option>
+        <ion-option value="ALGODAO">ALGODAO</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-row>
+      <ion-col col-6>
+        <button type="button" (click)="deletar()" icon-end round color="danger" ion-button>
+          Excluir
+          <ion-icon name="trash"></ion-icon>
+        </button>
+
+      </ion-col>
+      <ion-col col-6>
+        <button type="submit" icon-end round [disabled]="!form.dirty || form.invalid" ion-button>
+          Gravar
+          <ion-icon name="send"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+</ion-content>

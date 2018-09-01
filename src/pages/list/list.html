@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>list</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button  ion-item *ngFor="let talhao of talhoes" (click)="loadTalhao(talhao)">
+        <ion-icon name="leaf"></ion-icon>
+      {{talhao.descricao}}
+      <small text-end > [ {{talhao.cultura}} ]</small>
+    </button>
+  </ion-list>
+</ion-content>

@@ -1,14 +1,32 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      TALHÃO APP
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card color="light">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 offset-3>
+          <ion-img src="assets/imgs/leaf.png"></ion-img>
+        </ion-col>
+        <ion-col col-12>
+
+          <button ion-button icon-end block round (click)="openListPage()">
+          
+            <span>LISTAR</span>
+            <ion-icon  name="list"></ion-icon>
+          </button>
+          <button ion-button icon-end block round color="secondary">
+            
+            <span>CADASTRAR NOVO</span>
+            <ion-icon  name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
 </ion-content>
